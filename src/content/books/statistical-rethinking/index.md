@@ -2,8 +2,9 @@
 title: "Statistical Rethinking: A Bayesian Course"
 author: "Richard McElreath"
 year: 2024
+pubYear: 2020
 dateRead: 2024-02-10
-rating: 5
+rating: 10
 status: "completed"
 description: "A brilliant introduction to Bayesian statistics with a focus on practical modeling and causal thinking."
 ---
@@ -97,7 +98,5 @@ This book fundamentally changed how I approach statistical modeling:
 
 - [Statistical Rethinking 2023 Lecture Videos](https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus)
 - [PyMC3 implementations](https://github.com/pymc-devs/resources)
-
-## Rating: ★★★★★
 
 The best statistics book I've read. Challenging but rewarding. I'll be returning to this book for years to come.

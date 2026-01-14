@@ -2,8 +2,9 @@
 title: "Thinking, Fast and Slow"
 author: "Daniel Kahneman"
 year: 2024
+pubYear: 2011
 dateRead: 2024-01-15
-rating: 5
+rating: 8
 status: "completed"
 description: "A groundbreaking exploration of the two systems that drive the way we think and make decisions."
 ---
@@ -49,7 +50,5 @@ As a statistician and ML engineer, understanding these biases is crucial:
 ## Reflections
 
 This book should be required reading for anyone working with data or making decisions under uncertainty. It's humbling to realize how often our intuitions lead us astray, and empowering to know that awareness of these biases can help us make better decisions.
-
-## Rating: ★★★★★
 
 An absolute masterpiece that bridges psychology, economics, and practical wisdom. Dense but rewarding.

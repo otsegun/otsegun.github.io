@@ -2,8 +2,9 @@
 title: "Designing Data-Intensive Applications"
 author: "Martin Kleppmann"
 year: 2023
+pubYear: 2017
 dateRead: 2023-09-20
-rating: 5
+rating: 9
 status: "completed"
 description: "The definitive guide to building reliable, scalable, and maintainable data systems."
 ---
@@ -76,7 +77,5 @@ Applied these concepts to:
 - Designing a distributed feature store for ML models
 - Improving data pipeline reliability
 - Making better technology choices for new projects
-
-## Rating: ★★★★★
 
 A must-read for anyone serious about building data systems. Dense but incredibly valuable. I keep coming back to it as a reference.
