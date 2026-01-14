@@ -1,0 +1,77 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { readingTime } from "@lib/utils";
+import BackToPrev from "@components/BackToPrev.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+
+export async function getStaticPaths() {
+  const books = (await getCollection("books"))
+    .filter(book => !book.data.draft);
+  return books.map((book) => ({
+    params: { slug: book.slug },
+    props: book,
+  }));
+}
+type Props = CollectionEntry<"books">;
+
+const book = Astro.props;
+const { Content } = await book.render();
+
+const getStatusBadge = (status: string) => {
+  switch (status) {
+    case "completed": return "Completed";
+    case "reading": return "Currently Reading";
+    case "to-read": return "To Read";
+    default: return status;
+  }
+};
+
+const getRatingStars = (rating?: number) => {
+  if (!rating) return "";
+  return "★".repeat(rating) + "☆".repeat(5 - rating);
+};
+---
+
+<PageLayout title={book.data.title} description={book.data.description || `Book notes on ${book.data.title} by ${book.data.author}`}>
+  <Container>
+    <div class="animate">
+      <BackToPrev href="/books">
+        Back to books
+      </BackToPrev>
+    </div>
+    <div class="space-y-2 my-10">
+      <div class="animate text-2xl font-semibold text-black dark:text-white">
+        {book.data.title}
+      </div>
+      <div class="animate text-lg text-black/75 dark:text-white/75">
+        by {book.data.author}
+      </div>
+      <div class="animate flex flex-wrap items-center gap-2 text-sm">
+        <span class="px-2 py-1 bg-black/5 dark:bg-white/10 rounded">
+          {book.data.year}
+        </span>
+        <span class="px-2 py-1 bg-black/5 dark:bg-white/10 rounded">
+          {getStatusBadge(book.data.status)}
+        </span>
+        {book.data.rating && (
+          <span class="text-yellow-600 dark:text-yellow-500">
+            {getRatingStars(book.data.rating)}
+          </span>
+        )}
+      </div>
+      {book.data.dateRead && (
+        <div class="animate text-sm text-black/60 dark:text-white/60">
+          Read on <FormattedDate date={book.data.dateRead} />
+        </div>
+      )}
+      <div class="animate text-sm text-black/60 dark:text-white/60">
+        {readingTime(book.body)}
+      </div>
+    </div>
+    <article class="animate prose dark:prose-invert">
+      <Content />
+    </article>
+  </Container>
+</PageLayout>

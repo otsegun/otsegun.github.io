@@ -1,0 +1,60 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { SITE, SOCIALS } from "@consts";
+import Link from "@components/Link.astro";
+---
+
+<PageLayout title="About" description="About me - my background, skills, and interests">
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        About Me
+      </div>
+      
+      <div class="animate space-y-4">
+        <p>
+          I'm a statistician, machine learning engineer, and software developer. My work lies at the intersection of data-driven decision making and scalable software architecture. I'm passionate about building robust ML systems that don't just work in the lab, but deliver consistent value in production.
+        </p>
+        
+        <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">What I Do</h2>
+        <p>
+          Currently, my focus is on:
+        </p>
+        <ul class="list-disc list-inside space-y-2">
+          <li><strong>Statistical Modeling</strong>: Applying Bayesian methods and causal inference to understand complex phenomena and quantify uncertainty.</li>
+          <li><strong>ML Engineering</strong>: Designing and deploying scalable machine learning pipelines and real-time inference systems.</li>
+          <li><strong>Software Architecture</strong>: Building maintainable, well-tested applications with a focus on clean code and performance.</li>
+          <li><strong>Experiment Design</strong>: Helping teams design robust experiments and A/B tests to make informed product decisions.</li>
+        </ul>
+        
+        <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Research & Interests</h2>
+        <p>
+          I'm particularly interested in <em>Probabilistic Programming</em>, <em>Causal Discovery</em>, and <em>Distributed Systems</em>. I believe that the future of AI lies in combining the interpretability of statistical models with the power of modern machine learning.
+        </p>
+        
+        <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Reading & Learning</h2>
+        <p>
+          Continuous learning is core to my philosophy. I spend a significant amount of my time reading technical literature and academic papers. You can find my latest <Link href="/books">book notes</Link> and <Link href="/research">research reflections</Link> right here on this blog.
+        </p>
+        
+        <p>
+          I created this space to share my technical findings, track my reading journey, and contribute to the broader statistics and engineering community.
+        </p>
+        
+        <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Get in Touch</h2>
+        <p>
+          I'm always open to discussing new ideas, interesting datasets, or potential collaborations. Reach out via email at <Link href={`mailto:${SITE.EMAIL}`}>{SITE.EMAIL}</Link> or 
+          connect with me on social media:
+        </p>
+        <nav class="flex gap-4 mt-4">
+          {SOCIALS.map((social) => (
+            <Link href={social.HREF} external>
+              {social.NAME}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

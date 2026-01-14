@@ -1,0 +1,56 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { BLOGROLL } from "@consts";
+import Link from "@components/Link.astro";
+
+const blogs = [
+  {
+    name: "Astro Blog",
+    description: "Official news and deep dives from the Astro team.",
+    url: "https://astro.build/blog/"
+  },
+  {
+    name: "Statistical Rethinking",
+    description: "Richard McElreath's blog on Bayesian statistics and causal inference.",
+    url: "https://github.com/rmcelreath/stat_rethinking_2023"
+  },
+  {
+    name: "Martin Kleppmann's Blog",
+    description: "Insights on distributed systems and data intensive applications.",
+    url: "https://martin.kleppmann.com/"
+  },
+  {
+    name: "Andrew Gelman's Blog",
+    description: "Statistical Modeling, Causal Inference, and Social Science.",
+    url: "https://statmodeling.stat.columbia.edu/"
+  }
+];
+---
+
+<PageLayout title={BLOGROLL.TITLE} description={BLOGROLL.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Blogroll
+      </div>
+      <div class="animate space-y-4">
+        <p>A collection of blogs, websites, and resources I follow and recommend.</p>
+        <ul class="flex flex-col gap-4">
+          {blogs.map(blog => (
+            <li class="flex flex-col gap-1 p-4 border border-black/15 dark:border-white/20 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+              <Link href={blog.url} external underline={false}>
+                <div class="font-medium text-black dark:text-white hover:underline">
+                  {blog.name}
+                </div>
+              </Link>
+              <div class="text-sm text-black/60 dark:text-white/60">
+                {blog.description}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

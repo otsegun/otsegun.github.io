@@ -1,0 +1,89 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { BOOKS } from "@consts";
+import Link from "@components/Link.astro";
+
+const books = (await getCollection("books"))
+  .filter(book => !book.data.draft)
+  .sort((a, b) => {
+    // Sort by year descending, then by dateRead descending if available
+    if (a.data.year !== b.data.year) {
+      return b.data.year - a.data.year;
+    }
+    if (a.data.dateRead && b.data.dateRead) {
+      return b.data.dateRead.valueOf() - a.data.dateRead.valueOf();
+    }
+    return 0;
+  });
+
+// Group books by year
+const booksByYear = books.reduce((acc, book) => {
+  const year = book.data.year;
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(book);
+  return acc;
+}, {} as Record<number, typeof books>);
+
+const years = Object.keys(booksByYear).map(Number).sort((a, b) => b - a);
+
+const getStatusEmoji = (status: string) => {
+  switch (status) {
+    case "completed": return "✓";
+    case "reading": return "📖";
+    case "to-read": return "📚";
+    default: return "";
+  }
+};
+
+const getRatingStars = (rating?: number) => {
+  if (!rating) return "";
+  return "★".repeat(rating) + "☆".repeat(5 - rating);
+};
+---
+
+<PageLayout title={BOOKS.TITLE} description={BOOKS.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Book Notes
+      </div>
+      <div class="animate space-y-8">
+        {years.map((year) => (
+          <div class="space-y-4">
+            <div class="font-semibold text-black dark:text-white">
+              {year}
+            </div>
+            <ul class="flex flex-col gap-3">
+              {booksByYear[year].map((book) => (
+                <li class="flex flex-col gap-1">
+                  <Link href={`/books/${book.slug}`} underline={false}>
+                    <div class="flex items-start gap-2">
+                      <span class="text-sm">{getStatusEmoji(book.data.status)}</span>
+                      <div class="flex-1">
+                        <div class="font-medium text-black dark:text-white hover:underline">
+                          {book.data.title}
+                        </div>
+                        <div class="text-sm text-black/60 dark:text-white/60">
+                          by {book.data.author}
+                        </div>
+                        {book.data.rating && (
+                          <div class="text-sm text-yellow-600 dark:text-yellow-500">
+                            {getRatingStars(book.data.rating)}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</PageLayout>
