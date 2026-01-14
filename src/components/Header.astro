@@ -25,34 +25,76 @@ import { SITE } from "@consts";
         <span>
           {`/`}
         </span>
-        <Link href="/research">
-          research
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/books">
-          book notes
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/blogroll">
-          blogroll
-        </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work">
-          work
-        </Link>
-        <span>
-          {`/`}
-        </span>
+        <div class="hidden sm:flex gap-1">
+          <Link href="/research">
+            research
+          </Link>
+          <span>
+            {`/`}
+          </span>
+          <Link href="/books">
+            book notes
+          </Link>
+          <span>
+            {`/`}
+          </span>
+          <Link href="/blogroll">
+            blogroll
+          </Link>
+          <span>
+            {`/`}
+          </span>
+          <Link href="/work">
+            work
+          </Link>
+          <span>
+            {`/`}
+          </span>
+        </div>
         <Link href="/about">
           about
         </Link>
+        <div class="sm:hidden relative">
+          <button id="menu-button" class="flex items-center gap-1 hover:text-black dark:hover:text-white transition-colors duration-300">
+            <span>{`/`}</span>
+            <span>more</span>
+          </button>
+          <div id="menu-content" class="absolute right-0 top-full mt-2 w-36 bg-stone-100 dark:bg-stone-900 border border-black/15 dark:border-white/20 rounded-lg p-3 shadow-xl hidden z-50">
+            <nav class="flex flex-col gap-3">
+              <Link href="/research">research</Link>
+              <Link href="/books">book notes</Link>
+              <Link href="/blogroll">blogroll</Link>
+              <Link href="/work">work</Link>
+            </nav>
+          </div>
+        </div>
       </nav>
     </div>
   </Container>
 </header>
+
+<script>
+  function initMenu() {
+    const menuButton = document.getElementById("menu-button");
+    const menuContent = document.getElementById("menu-content");
+
+    if (menuButton && menuContent) {
+      menuButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuContent.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menuContent.contains(e.target as Node)) {
+          menuContent.classList.add("hidden");
+        }
+      });
+    }
+  }
+
+  // Initialize on page load
+  initMenu();
+
+  // Re-initialize after view transitions
+  document.addEventListener("astro:after-swap", initMenu);
+</script>
