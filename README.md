@@ -1,64 +1,63 @@
-![Astro Nano](_astro_nano.png)
+# Personal Blog & Portfolio
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+A minimalist, high-performance personal blog and portfolio built with Astro, tailored for a technical professional background in Statistics, Machine Learning, and Software Engineering.
 
-Built with Astro, Tailwind and Typescript, an no frameworks.
+## 🚀 Features
 
-It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
+- **Blazing Fast**: 100/100 Lighthouse performance.
+- **Content Collections**: Managed sections for Blog, Projects, Research, and Book Notes.
+- **Dynamic Book Notes**: Automatic 1-10 rating system and status tracking (Reading vs. Completed).
+- **Academic Integration**: Support for research papers with author and publication metadata.
+- **Blogroll**: A dedicated page for recommended reading.
+- **Dark Mode**: Built-in support for light, dark, and system themes.
+- **CI/CD**: Automatic deployment to GitHub Pages via GitHub Actions.
 
-## 🚀 Deploy your own
+## 🛠️ Tech Stack
 
-[![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano)  [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
+- **Framework**: [Astro](https://astro.build/)
+- **Style**: [Tailwind CSS](https://tailwindcss.com/)
+- **Fonts**: Inter & Lora
+- **Deployment**: GitHub Pages
 
-## 📋 Features
+## 📖 How to add content
 
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
+### Blog Posts
+Create a new Markdown file in `src/content/blog/title.md`.
 
-## 💯 Lighthouse score
-![Astro Nano Lighthouse Score](_lighthouse.png)
+### Projects
+Create a new Markdown file in `src/content/projects/title.md`.
 
-## 🕊️ Lightweight
-No frameworks or added bulk
+### Research
+Create a folder in `src/content/research/my-research/` and add an `index.md`.
 
-## ⚡︎ Fast
-Rendered in ~40ms on localhost
+### Book Notes
+Create a folder in `src/content/books/book-title/` and add an `index.md`.
+Use the following frontmatter:
+```yaml
+title: "Book Title"
+author: "Author Name"
+year: 2024 # Year you read it
+pubYear: 2020 # Year published
+status: "completed" # or "reading"
+rating: 9 # 1-10 (optional)
+description: "Brief summary for cards"
+```
 
-## 📄 Configuration
+## 💻 Local Development
 
-The blog posts on the demo serve as the documentation and configuration.
-
-## 💻 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run dev:network`     | Starts local dev server on local network         |
-| `npm run sync`            | Generates TypeScript types for all Astro modules.|
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run preview:network` | Preview build on local network                   |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run lint`            | Run ESLint                                       |
-| `npm run lint:fix`        | Auto-fix ESLint issues                           |
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Build for production:
+   ```bash
+   npm run build
+   ```
 
 ## 🏛️ License
 
-MIT
+This project is open-source and available under the MIT License.
