@@ -12,30 +12,52 @@ import Link from "@components/Link.astro";
         About Me
       </div>
       
-      <div class="animate space-y-4">
+      <article class="animate space-y-4">
         <p>
-          I'm a statistician, machine learning engineer, and software developer. My work lies at the intersection of data-driven decision making and scalable software architecture. I'm passionate about building robust ML systems that don't just work in the lab, but deliver consistent value in production.
+        My name is Oluwasegun Ojo, but most people call me Segun. I was born and bred in Akure, a city located in the south-western part of Nigeria.
+        By causuality rather than choice, I ended up studying Statistics at the Federal University of Technology, Akure, and I fell in love with stats.
+         I later got a scholarship from the African Institute for Mathematical Sciences (AIMS) in Cameroon, where I completed my masters in mathematical science in 2016. 
+         </p>
+         <p>
+         I relocated to Spain for my doctoral research in 2018, under the supervision of Antonio Fernandez Anta at the IMDEA Networks Institute, Madrid and the Unviversidad Carlos III de Madrid (UC3M).
+         My doctoral research was mostly focused on scalable outlier detection techniques for big data streams. You can see some of my published researched in the <a href="/research">research section</a>. 
+         You may also want to check out my <a href="https://scholar.google.com/citations?user=CtT5unQAAAAJ">Google scholar profile</a> if that's your thing.
         </p>
+        <p>
+        After defending my thesis in 2022, I continued on to a postdoct at the UC3M-Santander Big Data Institute, Madrid (a rsearch institute of UC3M).
+        While there I got to work on interesting data science problems with applications in finance, market intelligence and retail for big spanish corporations
+        like Santander Bank, El Corte Ingles; and various other government agencies.  
+        </p>
+        
+        <p>
+          I am currently a machine learning engineer at <a href="https://gruporuiz.com/">Grupo Ruiz</a>, where I work on interesting data science problems in
+          mobility and interurban transport.  I also explore and research on ML and AI applications in the interurban transport sector and 
+          I often build prototypes of my research and deploy them.
+        </p>
+
+        <p> </p>
         
         <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">What I Do</h2>
         <p>
           Currently, my focus is on:
         </p>
         <ul class="list-disc list-inside space-y-2">
-          <li><strong>Statistical Modeling</strong>: Applying Bayesian methods and causal inference to understand complex phenomena and quantify uncertainty.</li>
+          <li><strong>Statistical Modeling</strong>: I build models to help with planning and prediction of mobility demand in Spain.</li>
           <li><strong>ML Engineering</strong>: Designing and deploying scalable machine learning pipelines and real-time inference systems.</li>
-          <li><strong>Software Architecture</strong>: Building maintainable, well-tested applications with a focus on clean code and performance.</li>
-          <li><strong>Experiment Design</strong>: Helping teams design robust experiments and A/B tests to make informed product decisions.</li>
+          <li><strong>R&D</strong>: Research and Development of new ML, CV, and AI prototypes in the public transport sector.</li>
+          <li><strong>Software Development</strong>: I love building software, whether at work or for personal projects. I currently write Python and Rust.
+          I've also written a considerable amount of R and Dart code in the past.</li>
+
         </ul>
         
-        <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Research & Interests</h2>
+        <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Interests</h2>
         <p>
-          I'm particularly interested in <em>Probabilistic Programming</em>, <em>Causal Discovery</em>, and <em>Distributed Systems</em>. I believe that the future of AI lies in combining the interpretability of statistical models with the power of modern machine learning.
+          I'm interested in problems at the intersection of statistics, machine learning, and software engineering (e.g., building productionML systems). I enjoy finding interesting new applications for data science and machine learning, and using data and technology to solve complex problems. 
         </p>
         
         <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Reading & Learning</h2>
         <p>
-          Continuous learning is core to my philosophy. I spend a significant amount of my time reading technical literature and academic papers. You can find my latest <Link href="/books">book notes</Link> and <Link href="/research">research reflections</Link> right here on this blog.
+          I feel alive everything I learn something new, so I spend a significant amount of my time reading technical literature and academic papers. You can find my latest <a href="/books">book notes</a> and <a href="/research">research reflections</a> right here on this blog.
         </p>
         
         <p>
@@ -44,7 +66,7 @@ import Link from "@components/Link.astro";
         
         <h2 class="font-semibold text-black dark:text-white mt-8 mb-4">Get in Touch</h2>
         <p>
-          I'm always open to discussing new ideas, interesting datasets, or potential collaborations. Reach out via email at <Link href={`mailto:${SITE.EMAIL}`}>{SITE.EMAIL}</Link> or 
+          I'm always open to discussing new ideas, interesting datasets, or potential collaborations. Reach out via email at ojooluwasegunt [at] google's mail service or 
           connect with me on social media:
         </p>
         <nav class="flex gap-4 mt-4">
@@ -54,7 +76,7 @@ import Link from "@components/Link.astro";
             </Link>
           ))}
         </nav>
-      </div>
+      </article>
     </div>
   </Container>
 </PageLayout>

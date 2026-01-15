@@ -55,20 +55,19 @@ const work = await Promise.all(
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I'm a statistician, machine learning engineer, and software developer passionate about 
+            I'm a machine learning engineer, and software developer passionate about 
             using data and technology to solve complex problems. Welcome to my corner of the internet 
-            where I share my thoughts on statistics, ML, software engineering, and the books that inspire me.
+            where I share my thoughts on data science, ML, software engineering, and the books that inspire me.
           </p>
           <p class="animate">
-            This site is built with Astro and features blog posts, project showcases, research papers, 
-            and book notes. It's designed to be fast, accessible, and easy to navigate with full support 
-            for light and dark themes.
+            This site features <a href="/blog">blog posts</a>, <a href="/projects">project showcases</a>, <a href="/research">research papers</a>, 
+            and <a href="/books">book notes</a>. 
           </p>
           <p class="animate">
             Feel free to explore my work, read my thoughts, or 
-            <Link href="/about">
+            <a href="/about">
               learn more about me
-            </Link>.
+            </a>.
           </p>
         </article>
       </section>
@@ -197,8 +196,8 @@ const work = await Promise.all(
         <article>
           <p>
             If you want to get in touch with me about something or just to say hi,
-            reach out on social media or send me an email.
-          </p>
+            reach out on social media or send me an email (email address on the <Link href="/about" aria-label="About me">about </Link> page).
+          </p>  
         </article>
         <ul class="flex flex-wrap gap-2">
           {SOCIALS.map(SOCIAL => (
@@ -209,11 +208,11 @@ const work = await Promise.all(
               {"/"}
             </li>
           ))}
-          <li class="line-clamp-1">
+          {/* <li class="line-clamp-1">
             <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
               {SITE.EMAIL}
             </Link>
-          </li>
+          </li> */}
         </ul>
       </section>
     </div>
