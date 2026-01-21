@@ -6,25 +6,71 @@ import Link from "@components/Link.astro";
 
 const blogs = [
   {
-    name: "Astro Blog",
-    description: "Official news and deep dives from the Astro team.",
-    url: "https://astro.build/blog/"
+    name: "Ben Kuhn's Blog",
+    description: "I really like a lot of Ben's posts. I find that most of his posts resonates with me and I find them insightful.",
+    url: "https://benkuhn.net/"
   },
   {
-    name: "Statistical Rethinking",
-    description: "Richard McElreath's blog on Bayesian statistics and causal inference.",
-    url: "https://github.com/rmcelreath/stat_rethinking_2023"
+    name: "Jeff Kaufman Blog",
+    description: "Being a first time parent myself, I find some of Jeff's posts on parenting insightful.",
+    url: "https://www.jefftk.com/"
   },
   {
-    name: "Martin Kleppmann's Blog",
-    description: "Insights on distributed systems and data intensive applications.",
-    url: "https://martin.kleppmann.com/"
+    name: "Armin Ronacher's Blog",
+    description: "I like Armin's posts on open-source software, software engin in general, and life",
+    url: "https://lucumr.pocoo.org"
   },
   {
-    name: "Andrew Gelman's Blog",
-    description: "Statistical Modeling, Causal Inference, and Social Science.",
-    url: "https://statmodeling.stat.columbia.edu/"
+    name: "Andy Bell's Blog",
+    description: "Andy's blog doesn't have a lot of posts, but I do like the blog's design and presentation using eleventy.",
+    url: "https://andybell.co.uk/"
+  }, 
+  {
+    name: "Huon On The Internet",
+    description: "Huon Wilson's blog where he writes about programming, rust, and typescript.",
+    url: "https://huonw.github.io/"
+  },
+  {
+    name: "Lalith Maganti's Blog",
+    description: "Lalith Maganti's blog where he writes about software engineering, performance, and open source software.",
+    url: "https://lalitm.com/"
+  },
+  {
+    name: "Nicholas Nethercote's Blog",
+    description: "Nicholas Nethercote's blog where he writes about rust compiler and performance optimization.",
+    url: "https://nnethercote.github.io/"
+  },
+  {
+    name: "Sean Goedecke's Blog",
+    description: "Sean Goedecke's blog where he writes about software engineering in large tech companies.",
+    url: "https://www.seangoedecke.com/"
+  },
+  {
+    name: "Steve Klabnik's Blog",
+    description: "I read a lot of Steve's posts on the rust programming language.",
+    url: "https://steveklabnik.com/"
+  }, 
+  {
+    name: "Jonathan Becker's Blog",
+    description: "I like the design of Jonathan Becker's blog.",
+    url: "https://www.jbecker.dev/"
+  }, 
+  {
+    name: "Ziade's Blog",
+    description: "Ziade's blog contains few posts on rust, running AI models on the web, and agentic coding",
+    url: "https://blog.ziade.org/"
+  }, 
+  {
+    name: "Candost's Blog",
+    description: "I like Candost's blog for its posts on engineering and book notes/reviews",
+    url: "https://candost.blog/"
+  },  
+  {
+    name: "Swyx's Blog",
+    description: "Swyx's blog where he writes about software engineering, AI, and web development.",
+    url: "https://www.swyx.io/"
   }
+
 ];
 ---
 
@@ -35,7 +81,7 @@ const blogs = [
         Blogroll
       </div>
       <div class="animate space-y-4">
-        <p>A collection of blogs, websites, and resources I follow and recommend.</p>
+        <p>This is a collection of other people's blogs that I like and that inspires me. Some of them I follow, while some others I include in this list just because I like their design or I find them interesting. I plan to sort them into different groups based on their content when I have some time.</p>
         <ul class="flex flex-col gap-4">
           {blogs.map(blog => (
             <li class="flex flex-col gap-1 p-4 border border-black/15 dark:border-white/20 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
