@@ -1,9 +1,10 @@
 ---
-company: "IMDEA Networks Institute"
+company: "IMDEA Networks Institute, Leganés, Madrid"
 role: "Research Assistant"
 dateStart: "04/18/2018"
 dateEnd: "11/30/2022"
 ---
+IMDEA Networks Institute is a research institute of the Madrid Autonomus Community of Spain. The institute does cutting edge research in telecommunication, networks and computer science. I worked as a research assistant at IMDEA Networks Institute from 2018 to 2022, under the supervision of Antonio Fernández Anta. My research at IMDEA was focused on scalable anomaly detection techniques for big data streams.
 
 - Developed three novel anomaly detection algorithms for big data analysis, published in *Advances in Data Analysis and Classification* and *Stat* journals. Check my [google scholar profile](https://scholar.google.com/citations?user=CtT5unQAAAAJ) for more details. 
 

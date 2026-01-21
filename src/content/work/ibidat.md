@@ -1,9 +1,11 @@
 ---
-company: "UC3M-Santander Big Data Institute, UC3M, Spain"
+company: "UC3M-Santander Big Data Institute (IBIDAT), UC3M, Spain"
 role: "Postdoctoral Fellow"
 dateStart: "12/01/2022"
 dateEnd: "12/31/2024"
 ---
+
+IBIDAT is a research institute of UC3M. It was originally founded as a colaboration between UC3M and Santander Bank. It is now an independent research institute of UC3M. The research institute takes on research and industry projects in the field of data science and machine learning. I spent 2 years there as a postdoctoral fellow working on a variety of data science and machine learning projects.
 
 - Developed and deployed large‑scale LLM‑based content classification system processing 25,000+ documents (35GB data) for a Spanish market intelligence firm. 
 
