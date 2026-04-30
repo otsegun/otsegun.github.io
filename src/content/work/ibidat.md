@@ -5,7 +5,7 @@ dateStart: "12/01/2022"
 dateEnd: "12/31/2024"
 ---
 
-IBIDAT is a research institute of UC3M. It was originally founded as a colaboration between UC3M and Santander Bank. It is now an independent research institute of UC3M. The research institute takes on research and industry projects in the field of data science and machine learning. I spent 2 years there as a postdoctoral fellow working on a variety of data science and machine learning projects.
+IBIDAT is a research institute of the Carlos III University of Madrid (UC3M). It was originally founded as a colaboration between UC3M and Santander Bank, although tt is now an independent research institute. The research institute takes on research and industry projects in the field of data science and machine learning. I spent 2 years there as a postdoctoral fellow working on a variety of data science and machine learning projects. The following are some of my achievements at IBIDAT:
 
 - Developed and deployed large‑scale LLM‑based content classification system processing 25,000+ documents (35GB data) for a Spanish market intelligence firm. 
 
