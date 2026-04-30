@@ -31,6 +31,7 @@ const getStatusBadge = (status: string) => {
 ---
 
 <PageLayout title={book.data.title} description={book.data.description || `Book notes on ${book.data.title} by ${book.data.author}`}>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" slot="head" />
   <Container>
     <div class="animate">
       <BackToPrev href="/books">
