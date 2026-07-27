@@ -2,6 +2,7 @@
 title: "Bayesian Methods for Time Series Forecasting"
 description: "A comprehensive study on applying Bayesian inference techniques to improve time series forecasting accuracy in financial markets."
 date: 2024-03-15
+draft: true
 authors: "Your Name, Co-Author Name"
 publication: "Journal of Statistical Computing, Vol. 45, 2024"
 paperURL: "https://example.com/paper"

@@ -2,6 +2,7 @@
 title: "Machine Learning for Causal Inference in Observational Studies"
 description: "Investigating the use of machine learning algorithms to estimate causal effects from observational data with applications to healthcare."
 date: 2023-11-20
+draft: true
 authors: "Your Name, Research Team"
 publication: "International Conference on Machine Learning (ICML), 2023"
 paperURL: "https://example.com/paper2"

@@ -55,7 +55,7 @@ const work = await Promise.all(
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I'm a machine learning engineer, and software developer passionate about 
+            I'm a data scientist and machine learning engineer passionate about 
             using data and technology to solve complex problems. Welcome to my corner of the internet 
             where I share my thoughts on data science, ML, software engineering, and the books that inspire me.
           </p>
@@ -72,122 +72,132 @@ const work = await Promise.all(
         </article>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h5>
-          <Link href="/blog">
-            See all posts
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {blog.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      {blog.length > 0 && (
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">
+              Latest posts
+            </h5>
+            <Link href="/blog">
+              See all posts
+            </Link>
+          </div>
+          <ul class="flex flex-col gap-4">
+            {blog.map(post => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h5>
-          <Link href="/work">
-            See all work
-          </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
-          </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent research
-          </h5>
-          <Link href="/research">
-            See all research
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {research.map(item => (
-            <li>
-              <ArrowCard entry={item} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent books I've been reading
-          </h5>
-          <Link href="/books">
-            See all my book notes
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {books.map(book => (
-            <li>
-              <Link href={`/books/${book.slug}`} underline={false}>
-                <div class="group relative flex flex-col gap-1 p-4 border border-black/15 dark:border-white/20 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out w-full">
-                  <div class="font-semibold text-black dark:text-white transition-colors duration-300">
-                    {book.data.title}
-                  </div>
-                  <div class="text-sm text-black/60 dark:text-white/60 line-clamp-1">
-                    {book.data.author} {book.data.description && <span> — {book.data.description}</span>}
-                  </div>
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 24 24"
-                    class="absolute top-1/2 right-4 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
-                    <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
-                    <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-                  </svg>
+      {work.length > 0 && (
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">
+              Work Experience
+            </h5>
+            <Link href="/work">
+              See all work
+            </Link>
+          </div>
+          <ul class="flex flex-col space-y-4">
+            {work.map(entry => (
+              <li>
+                <div class="text-sm opacity-75">
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
                 </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+                <div class="font-semibold text-black dark:text-white">
+                  {entry.data.company}
+                </div>
+                <div class="text-sm opacity-75">
+                  {entry.data.role}
+                </div>
+                <article>
+                  <entry.Content />
+                </article>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {projects.length > 0 && (
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">
+              Recent projects
+            </h5>
+            <Link href="/projects">
+              See all projects
+            </Link>
+          </div>
+          <ul class="flex flex-col gap-4">
+            {projects.map(project => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {research.length > 0 && (
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">
+              Recent research
+            </h5>
+            <Link href="/research">
+              See all research
+            </Link>
+          </div>
+          <ul class="flex flex-col gap-4">
+            {research.map(item => (
+              <li>
+                <ArrowCard entry={item} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {books.length > 0 && (
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">
+              Recent books I've been reading
+            </h5>
+            <Link href="/books">
+              See all my book notes
+            </Link>
+          </div>
+          <ul class="flex flex-col gap-4">
+            {books.map(book => (
+              <li>
+                <Link href={`/books/${book.slug}`} underline={false}>
+                  <div class="group relative flex flex-col gap-1 p-4 border border-black/15 dark:border-white/20 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out w-full">
+                    <div class="font-semibold text-black dark:text-white transition-colors duration-300">
+                      {book.data.title}
+                    </div>
+                    <div class="text-sm text-black/60 dark:text-white/60 line-clamp-1">
+                      {book.data.author} {book.data.description && <span> — {book.data.description}</span>}
+                    </div>
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      viewBox="0 0 24 24"
+                      class="absolute top-1/2 right-4 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                      <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+                      <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+                    </svg>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
