@@ -7,6 +7,7 @@ dateRead: 2024-01-15
 rating: 8
 status: "completed"
 description: "A groundbreaking exploration of the two systems that drive the way we think and make decisions."
+draft: true
 ---
 
 ## Overview

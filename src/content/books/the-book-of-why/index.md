@@ -5,6 +5,7 @@ year: 2024
 pubYear: 2018
 status: "reading"
 description: "A deep dive into the revolution in causal inference and how it's changing the way we understand the world and AI."
+draft: true
 ---
 
 ## Currently Reading

@@ -1,11 +1,9 @@
 ---
 title: "Designing Data-Intensive Applications"
 author: "Martin Kleppmann"
-year: 2023
+year: 2027
 pubYear: 2017
-dateRead: 2023-09-20
-rating: 9
-status: "completed"
+status: "to-read"
 description: "The definitive guide to building reliable, scalable, and maintainable data systems."
 ---
 
